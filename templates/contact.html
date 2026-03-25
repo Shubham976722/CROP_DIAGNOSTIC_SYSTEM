@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- HERO -->
+<section class="landing-hero">
+    <div class="hero-overlay">
+        <div class="container text-center text-white">
+            <h1 class="display-3 fw-bold">Contact Us</h1>
+            <p class="lead mt-3">
+                Have a problem with your crop? Reach out to us.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="how-it-works text-white py-5">
+    <div class="container">
+
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+
+                <form method="POST" class="p-4 rounded bg-dark bg-opacity-50 shadow">
+
+                    <div class="mb-3">
+                        <label>Name</label>
+                        <input type="text" name="name" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Mobile</label>
+                        <input type="text" name="mobile" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Email</label>
+                        <input type="email" name="email" class="form-control" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Location</label>
+                        <input type="text" name="location" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Crop</label>
+                        <input type="text" name="crop" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Problem Type</label>
+                        <select name="problem_type" class="form-control">
+                            <option>Disease</option>
+                            <option>Pest</option>
+                            <option>Soil</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Message</label>
+                        <textarea name="message" class="form-control" rows="4"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-success w-100">
+                        Send Message
+                    </button>
+
+                </form>
+
+                {% if success %}
+                <div class="alert alert-success mt-3 text-center">
+                    {{ success }}
+                </div>
+                {% endif %}
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}
